@@ -41,15 +41,16 @@ def extract_csv(csv_file, var_names, extract_timestamp=False, step=0):
 
 
 
-H_num = 1
+H_num = 3
+station_color = "R"
 # station_nums = [1,2,3,4,5,6]
 station_nums = [2,3] # test
 
 # Add if else statement for station color
-if H_num == 1 or H_num == 3:
-	station_color = "B"
-elif H_num == 2 or H_num == 5:
-	station_color = "R"
+# if H_num == 1 or H_num == 3:
+# 	station_color = "B"
+# elif H_num == 2 or H_num == 5:
+# 	station_color = "R"
 
 filling_limit = 30 # 5 min
 window_size = 30 # 5 min, window_size stride

@@ -15,12 +15,17 @@ avg_n = 20;
 numFiles = 275;
 signal = [];
 time = 0; timef = []; time_l=0;
-for j=1:numFiles
+
+path='/Volumes/USRP/2019-10-07/';
+Files=dir('*.bin')
+Files
+
+for j=1:length(Files)
     
     %%% Read File %%%
-    path = '/Volumes/USRP/2019-10-07/';
-    file = strcat(strcat('data_logging', int2str(j)),'.bin');
-    fileName = strcat(path, file);   
+    
+    %file = strcat(strcat();
+    fileName = Files(j).name;   
     %fileName = 'ac_1.bin';
     
     fileID = fopen(fileName, 'r');
@@ -58,6 +63,15 @@ for j=1:numFiles
         plot(signal)
         pause(0.01)
     end
+    
+    
+%     f_title = erase(file, '.mat');
+%     plot(Data.time, Data.signal)
+%     title(f_title);
+%     xlabel('Time (s)')
+%     ylabel('Signal')
+%     savefig(f_title)
+    
 end
 %sig_norm = normalize(sig_vert, 'center', 'mean');
 %sig_avg = movmean(sig_vert, movmean_k);

@@ -43,7 +43,7 @@ class data_logger(gr.top_block):
 
 		############# Initalize blocks #############
 		self.uhd_usrp_source = uhd.usrp_source(
-			",".join(('addr=192.168.10.2',"")),
+			",".join(('addr=192.168.10.201',"")),
 			uhd.stream_args(
 				cpu_format="fc32",
 				channels=range(1),
@@ -143,7 +143,7 @@ def main():
 	tb.start()
 
 	while 1:
-		#c = raw_input("'q' to quit\n")
+		#c = raw_input("'q' to quite\n")
 		tb.start_new_file()
 		
 
